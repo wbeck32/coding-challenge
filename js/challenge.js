@@ -1,5 +1,6 @@
 var appData = {};
 var appsArray = [];
+var uniqueHosts = [];
 
 function initializeData() {
 
@@ -33,14 +34,13 @@ function findUniqueHosts(appData, cb){
   for (var values in appData) {
       tmpArray.push(appData[values].host);
     }
-      var uniqueHosts = [];
       var flattened = [].concat.apply([],tmpArray);
       flattened = flattened.filter(function(v,i,a){
         if (uniqueHosts.indexOf(v) === -1){
           uniqueHosts.push(v);
         }
       });
-      cb(uniqueHosts, rankApps);
+    cb(uniqueHosts, rankApps);
 };
 
 function attachAppsToHosts(uniqueHosts, cb){
@@ -107,17 +107,59 @@ function getTopAppsByHost(appsArray){
   }
 
 }
-var hostname = "2b4cfcf7-81d5.kelli.org";
+
+//functions here to add an app to a specific hostname
+//and to remove the same app
+//choose the hostname and the app will be added or removed
+//this is part of a separate monitoring page, monitor.html
+
+Object.size = function(obj) {
+    var size = 0, key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+};
+
+function initializeMonitorPage() {
+  console.log(uniqueHosts); //uniqueHosts looks like an array, but it's typeof object
+  console.log(typeof uniqueHosts);
+  console.log(uniqueHosts.length);
+  console.log(Object.keys(uniqueHosts).length);
+  console.log(Object.keys(uniqueHosts));
+  console.log(Object.size(uniqueHosts));
+
+  var selectWrapperDiv = document.getElementById('selectWrapper');
+  var hostList = document.createElement("select");
+  hostList.id = "hostname";
+  selectWrapperDiv.appendChild(hostList);
+
+  for(keys in uniqueHosts) {
+      console.log(uniqueHosts[keys]);
+      var option = document.createElement("option");
+      option.value = uniqueHosts[u];
+      option.text = uniqueHosts[u];
+      console.log(option);
+      var selectList = document.getElementById('hostname');
+      selectList.appendChild(option);
+  }
+}
+
+var hostname = "7e6272f7-098e.dakota.biz";
 var appToAdd = {
   name: 'Delightful Cotton Shirt',
-  apdex: 92,
+  apdex: 99,
   version: 7
+}
+
+var appToRemove = {
+  name: 'Delightful Cotton Shirt',
 }
 
 addAppToHosts(hostname, appToAdd);
 
 function addAppToHosts(hostname, app) {
-   console.log(appsArray);
+  // console.log(typeof appsArray);
   for (var h = 0; h < appsArray.length; h++) {
     console.log('h: ',h);
     if (appsArray[h][0] == hostname) {
@@ -126,7 +168,7 @@ function addAppToHosts(hostname, app) {
   }
 };
 //
-// removeAppFromHosts(function(hostname,app){
+// removeAppFromData(function(hostname,app){
 //
 //
 // });

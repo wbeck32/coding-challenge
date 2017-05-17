@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Add or Remove App from Host</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body>
+<div class="wrapper">
+<div id="selectWrapper">
+
+</div>
+
+<a href="#" onclick="addAppToHosts(hostname, appToAdd)">Add App to Host</a>
+
+<a href="#" onclick="removeAppFromData(appToRemove)">Remove App from Data</a>
+</div>
+<div id="cardWrapper" class="cardWrapper"></div>
+
+<script type="text/javascript" src="data/host-app-data.json"></script>
+<script type="text/javascript" src="js/challenge.js"></script>
+<script type="text/javascript">
+  document.onload = initializeData();
+  document.onload = initializeMonitorPage();
+</script>
+
+</body>
+</html>

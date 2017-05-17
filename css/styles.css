@@ -4,11 +4,15 @@ body {
   color: #000;
   background-color: #D3D3D3;
 }
+
+a {
+  color: #4A4A4A;
+}
+
 .wrapper {
   margin: 0 auto;
   width: 840px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  height: 100%;
 }
 
 .header {
@@ -52,7 +56,6 @@ body {
 }
 
 .card {
-  display: inline-block;
   margin: 0;
   padding: 30px;
   width: 315px;
@@ -83,5 +86,4 @@ body {
   font-size: 16px;
   line-height: 19px;
   text-decoration: none;
-  color: #4A4A4A;
 }
