@@ -3,15 +3,22 @@
 body {
   color: #000;
   background-color: #D3D3D3;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #4A4A4A;
+  text-decoration: none;
+}
+
+.spacer {
+  margin: 10px;
 }
 
 .wrapper {
   margin: 0 auto;
   width: 840px;
+  height: 100%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -21,6 +28,10 @@ a {
 .center {
   display: table;
   margin: 0 auto;
+}
+
+#selectWrapper {
+  display: inline-block;
 }
 
 .title {
@@ -85,5 +96,4 @@ a {
 .appInfo .appName a {
   font-size: 16px;
   line-height: 19px;
-  text-decoration: none;
 }
