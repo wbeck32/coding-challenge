@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Apps by Host</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+<body>
+<div class="wrapper" id="wrapper">
+<div class="header">
+  <span class="center">
+  <span class="title">Apps by Host</span>
+  <span class="email">for user averylongemailaddress@companyname.com</span>
+  <span class="cta"><label><input type="checkbox" id="checkbox" onchange="changeView()">&nbsp;&nbsp;Show as list</label></span>
+</span>
+</div>
+<div id="cardWrapper" class="cardWrapper"></div>
+</div>
+  <script type="text/javascript" src="data/host-app-data.json"></script>
+  <script type="text/javascript" src="js/newrelic.js"></script>
+  <script type="text/javascript">
+    document.onload = initializeData();
+  </script>
+</body>
+
+</html>
