@@ -11,7 +11,7 @@ function loadJSON(callback) {
     xobj.onreadystatechange = function() {
         if (xobj.readyState == 4 && xobj.status == "200") {
             callback(xobj.responseText);
-        };
+        }
     }
     xobj.send(null);
 }
@@ -31,7 +31,7 @@ loadJSON(function(response) {
 
 function findUniqueHosts(appData, cb){
   var tmpArray = [];
-  for (var values in appData) {
+  for (values in appData) {
       tmpArray.push(appData[values].host);
     }
       var flattened = [].concat.apply([],tmpArray);
@@ -105,7 +105,6 @@ function getTopAppsByHost(appsArray){
     }
     document.getElementById("cardWrapper").appendChild(cardDiv);
   }
-
 }
 
 // Functions down here are to add an app to a specific hostname
@@ -170,10 +169,10 @@ function addAppToHosts(hostname, app) {
       console.log(appsArray[h][0]);
     }
   }
-};
+}
 
-function removeAppFromData(app){
+function removeAppFromData(app) {
   // This function takes the name of an app and
   // removes it from the appsArray for any hostname
-  // it's associated with.
-});
+  // it is associated with.
+}
